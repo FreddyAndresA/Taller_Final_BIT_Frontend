@@ -1,0 +1,9 @@
+.link-hover {
+    transition: transform 0.3s ease;
+}
+
+.link-hover:hover {
+    color: #4C18C4 !important;
+    font-weight: 700;
+    transform: scale(1.2);
+}
