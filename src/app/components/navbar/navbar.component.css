@@ -1,9 +1,20 @@
-.link-hover {
+.logo:hover {
+    transform: scale(1.1);
     transition: transform 0.3s ease;
 }
 
+.link-hover {
+  transition: transform 0.3s ease;
+}
+
 .link-hover:hover {
-    color: #4C18C4 !important;
-    font-weight: 700;
-    transform: scale(1.2);
+  color: #4C18C4 !important;
+  font-weight: 700;
+  transform: scale(1.2);
+}
+
+.btn-check:focus+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
