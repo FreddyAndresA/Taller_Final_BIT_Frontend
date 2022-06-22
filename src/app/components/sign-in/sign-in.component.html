@@ -1,0 +1,26 @@
+<form class="bg-light p-4 rounded shadow" [formGroup]="signInForm" (ngSubmit)="signIn()">
+    <h2 class="h2 mb-5 fw-light">Iniciar Sesión</h2>
+    <div class="mb-4">
+        <label for="emailLogin" class="form-label">Dirección de correo electrónico</label>
+        <input type="email" class="form-control" id="emailLogin" formControlName="email">
+        <div class="form-text text-danger fw-light" *ngIf="signInForm.get('email')?.hasError('required') && signInForm.get('email')?.touched">Por favor ingresa tu dirección de correo</div>
+        <div class="form-text text-danger fw-light" *ngIf="signInForm.get('email')?.hasError('pattern') && signInForm.get('email')?.touched">Por favor ingresa un correo electrónico valido</div>
+    </div>
+    <div class="mb-4">
+        <label for="passwordLogin" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="passwordLogin" formControlName="password">
+        <div class="form-text text-danger fw-light" *ngIf="signInForm.get('password')?.hasError('required') && signInForm.get('password')?.touched">Por favor ingresa tu contraseña</div>
+        
+    </div>
+    <button type="submit" class="btn w-100 themeBotonOutlined" [disabled]="signInForm.invalid">Iniciar sesión...</button>
+</form>
+
+
+<!-- 
+    
+    
+    <span *ngIf="signInForm.get('email')?.hasError('required') && signInForm.get('email')?.touched" class="text-danger fs-6 fw-lighter">El correo electrónico del contacto es obligatorio</span>
+    <span *ngIf="signInForm.get('email')?.hasError('pattern')" class="text-danger fs-6 fw-lighter">El correo electrónico del contacto es invalido</span>
+
+
+-->

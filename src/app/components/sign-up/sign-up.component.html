@@ -1,0 +1,53 @@
+<form class="bg-light p-4 rounded shadow" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+    <h2 class="h2 mb-5 fw-light">Registro</h2>
+    <div class="mb-4">
+        <label for="registerName" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="registerName" aria-describedby="emailHelp" formControlName="nombre">
+        <div class="form-text">Nunca compartiremos tu información</div>
+        <div class="form-text text-danger fw-light" *ngIf="signUpForm.get('nombre')?.hasError('required') && signUpForm.get('nombre')?.touched">Por favor ingresa tu nombre</div>
+    </div>
+    
+    
+    
+    
+    <div class="mb-4">
+        <label for="registerName" class="form-label d-block">Mi genero de peliculas favorito es...</label>
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="genero">
+            <option selected disabled>Ver opciones...</option>
+            <option value="accion">Accion</option>
+            <option value="aventura">Aventura</option>
+            <option value="animacion">Animacion</option>
+            <option value="crimen">Crimen</option>
+            <option value="documentales">Documentales</option>
+            <option value="drama">Drama</option>
+            <option value="familia">Familia</option>
+            <option value="fantasia">Fantasia</option>
+            <option value="historia">Historia</option>
+            <option value="horror">Horror</option>
+            <option value="musica">Música</option>
+            <option value="misterio">Misterio</option>
+            <option value="romance">Romance</option>
+            <option value="ciencia-ficcion">Ciencia Ficción</option>
+            <option value="gerra">Guerra</option>
+            <option value="oeste">Westerns</option>
+          </select>
+          <div class="form-text text-danger fw-light" *ngIf="signUpForm.get('genero')?.hasError('required') && signUpForm.get('genero')?.touched">Por favor selecciona tu genero de pelicula favorito</div>
+    </div>
+
+
+    
+    <div class="mb-4">
+        <label for="registerEmail" class="form-label">Dirección de correo electrónico</label>
+        <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" formControlName="email">
+        <div class="form-text text-danger fw-light" *ngIf="signUpForm.get('email')?.hasError('required') && signUpForm.get('email')?.touched">Por favor ingresa tu dirección de correo</div>
+        <div class="form-text text-danger fw-light" *ngIf="signUpForm.get('email')?.hasError('pattern') && signUpForm.get('email')?.touched">Por favor ingresa un correo electrónico valido</div>
+    </div>
+
+    <div class="mb-4">
+        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+        <div class="form-text text-danger fw-light" *ngIf="signUpForm.get('password')?.hasError('required') && signUpForm.get('password')?.touched">Por favor ingresa tu contraseña</div>
+
+    </div>
+    <button type="submit" class="btn themeBoton w-100" [disabled]="signUpForm.invalid">Registrarme !</button>
+</form>

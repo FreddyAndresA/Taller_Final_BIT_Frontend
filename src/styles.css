@@ -5,3 +5,25 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+.themeBoton {
+    background-color: var(--primaryColor) !important;
+    color: #fff !important;
+    transition: all 0.3s ease !important;
+}
+
+.themeBoton:hover {
+    opacity: 0.9 !important;
+}
+
+.themeBotonOutlined {
+    border: 2px solid var(--primaryColor) !important;
+    background-color: transparent !important;
+    color: var(--primaryColor) !important;
+    transition: all 0.3s ease !important;
+}
+
+.themeBotonOutlined:hover {
+    background-color: var(--primaryColor) !important;
+    color: #fff !important;
+}
