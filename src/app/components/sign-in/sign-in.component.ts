@@ -90,7 +90,7 @@ export class SignInComponent implements OnInit {
         })
           .then((result) => {
             //Pendiente direccionar el router
-            this.router.navigate(['/buscar'])
+            this.router.navigate(['/inicio'])
           })
       }
 

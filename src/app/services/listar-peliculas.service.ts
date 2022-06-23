@@ -8,12 +8,24 @@ import { Observable } from 'rxjs';
 })
 export class ListarPeliculasService {
 
-  constructor(private http: HttpClient) { }
+  //private API_URL_TRENDING = 'https://api.themoviedb.org/3/trending/all/day?api_key=4451b033108a4d0d8d399e31162249a0'
+  private API_URL_TRENDING = 'https://api.themoviedb.org/3/trending/all/day?api_key=4451b033108a4d0d8d399e31162249a0&language=es&region=co'
 
-  getPeliculas(parametros:any):Observable<any> {
-    const URL = 'https://api.themoviedb.org/3/trending/all/day?api_key=4451b033108a4d0d8d399e31162249a0'
-    
-    return this.http.get(URL)
+  constructor( private http: HttpClient ) { }
+
+  /* getTrendingMovies():Observable<any> {
+      return this.http.get(this.API_URL_TRENDING)
+  } */
+  
+  getProviders():Observable<any> {
+      let raw = this.http.get(this.API_URL_TRENDING)
+
+      console.log(raw);
+      
+
+
+
+      return raw;
   }
 }
 

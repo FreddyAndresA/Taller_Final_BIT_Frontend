@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <h1 class="mt-3 mb-5 text-center display-3 fw-lighter titulo">Las películas y series <br> del momento...</h1>
+
+    <div class="row row-cols-2 row-cols-lg-3 g-5 my-5">
+        <div class="col" *ngFor="let movie of movies">
+            <div class="card">
+                <img [src]="[imageUrl]+movie.poster_path" class="card-img-top imagen" alt="logo">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold titulo">{{ movie.original_title }}{{ movie.original_name }}</h5>
+                    <p class="card-text fw-light">{{ movie.overview }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

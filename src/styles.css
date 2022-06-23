@@ -27,3 +27,7 @@
     background-color: var(--primaryColor) !important;
     color: #fff !important;
 }
+
+.titulo {
+    color: var(--primaryColor);
+}
