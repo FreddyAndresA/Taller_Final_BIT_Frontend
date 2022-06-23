@@ -13,19 +13,9 @@ export class ListarPeliculasService {
 
   constructor( private http: HttpClient ) { }
 
-  /* getTrendingMovies():Observable<any> {
+  getTrendingMovies():Observable<any> {
       return this.http.get(this.API_URL_TRENDING)
-  } */
-  
-  getProviders():Observable<any> {
-      let raw = this.http.get(this.API_URL_TRENDING)
-
-      console.log(raw);
-      
-
-
-
-      return raw;
   }
+  
 }
 

@@ -19,16 +19,10 @@ export class ListadoComponent implements OnInit {
     })
   } */
 
-  /* ngOnInit(): void {
+  ngOnInit(): void {
     this.trendingMovies.getTrendingMovies().subscribe(results => {
       this.movies = results.results;
-      console.log(this.movies);
-    })
-  } */
-
-  ngOnInit(): void {
-    this.trendingMovies.getProviders().subscribe(results => {
-      this.movies = results.results;
+      console.table(this.movies);
     })
   }
 
