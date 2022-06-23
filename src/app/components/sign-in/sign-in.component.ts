@@ -31,6 +31,7 @@ export class SignInComponent implements OnInit {
     const LOGIN = {
       email: this.signInForm.get('email')?.value,
       password: this.signInForm.get('password')?.value,
+      nombre: '',
       genero: ''
     }
 
@@ -51,6 +52,7 @@ export class SignInComponent implements OnInit {
         if (user.email === LOGIN.email) {
           emailValidation = true
           LOGIN.genero = user.genero
+          LOGIN.nombre = user.nombre
         }
         if (user.password === LOGIN.password) {
           passwordValidation = true
@@ -88,7 +90,7 @@ export class SignInComponent implements OnInit {
         })
           .then((result) => {
             //Pendiente direccionar el router
-            this.router.navigate(['/'])
+            this.router.navigate(['/buscar'])
           })
       }
 

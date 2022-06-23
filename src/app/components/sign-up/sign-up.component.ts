@@ -81,7 +81,7 @@ export class SignUpComponent implements OnInit {
     })
       .then((result) => {
         //Pendiente direccionar el router
-        this.router.navigate(['/'])
+        this.router.navigate(['/buscar'])
       })
   }
 
